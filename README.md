@@ -81,7 +81,7 @@ Finally, if you've read this far, don't forget to give this repo a ⭐️. They'
 
 ## Acknowledgments
 
-- Odin Project on [Twitter-Clone project](https://www.theodinproject.com/courses/ruby-on-rails/lessons/authentication)
+- Odin Project on [Active Record's Associations](https://www.theodinproject.com/courses/ruby-on-rails/lessons/associations)
 
 - [Microverse](https://microverse.org).
 
