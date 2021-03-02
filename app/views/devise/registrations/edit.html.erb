@@ -11,7 +11,7 @@
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
-
+  
   <div class="actions">
     <%= f.submit "Update" %>
   </div>

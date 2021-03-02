@@ -1,10 +1,11 @@
 class EventsController < ApplicationController
-  before_action :set_event, only: %i[ show edit update destroy ]
+  before_action :set_event, only: %i[ show new create ]
   before_action :authenticate_user!
 
   # GET /events or /events.json
   def index
-    @events = Event.all
+    @events = Event.all.order('created_at DESC')
+    @event = Event.new
   end
 
   # GET /events/1 or /events/1.json
