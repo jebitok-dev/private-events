@@ -12,8 +12,16 @@
 
 ActiveRecord::Schema.define(version: 2021_03_02_131411) do
 
-# Could not dump table "events" because of following StandardError
-#   Unknown type '' for column 'user'
+  create_table "events", force: :cascade do |t|
+    t.string "event"
+    t.string "date"
+    t.text "location"
+    t.string "invite"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_events_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.text "name"
