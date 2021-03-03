@@ -21,7 +21,7 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = current_user.events.build(event_params)
+    @event = User.find(session[:id]).created_events.build(event_params)
 
     respond_to do |format|
       if @event.save

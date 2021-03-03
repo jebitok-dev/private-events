@@ -1,22 +1,12 @@
-<p id="notice"><%= notice %></p>
+<div class="section">
+<div class="container">
+<h1>User</h1>
 
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
+<%= link_to @user.name, @user %>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+<h2>Created by current user</h2>
+<%= render @user.created_events %>
+<br>
 
-
-<h3>Events you created:</h3>
-<% if @user.organized_events.any? %>
-  <ol class="events">
-    <%= render @organized_events %>
-  </ol>
-<% end %>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+</div>
+</div>
