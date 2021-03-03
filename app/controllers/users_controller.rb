@@ -1,14 +1,7 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: %i[ show edit update destroy ]
-
   # GET /users or /users.json
   def index
     @users = User.all
-  end
-
-  # GET /users/1 or /users/1.json
-  def show
-    @user = User.find(params[:id] == 1)
   end
 
   # GET /users/new
@@ -22,17 +15,19 @@ class UsersController < ApplicationController
 
   # POST /users or /users.json
   def create
-    @user = current_user.posts.build(events_params)
+    @user = User.new(user_params)
 
-    respond_to do |format|
-      if @user.save
-        format.html { redirect_to root_path, notice: "User was successfully created." }
-        format.json { render :show, status: :created, location: @user }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
+    if @user.save
+      session[:id] = @user.id
+      session[:name] = @user.name
+      redirect_to @user, notice: 'You have successfully signed up'
+    else
+      render :new, alert: 'Name has alraedy been taken'
     end
+  end
+
+  def show
+    @user = User.find(params[:id])
   end
 
   # PATCH/PUT /users/1 or /users/1.json
