@@ -10,5 +10,13 @@
   <%= @user.email %>
 </p>
 
+
+<h3>Events you created:</h3>
+<% if @user.organized_events.any? %>
+  <ol class="events">
+    <%= render @organized_events %>
+  </ol>
+<% end %>
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
