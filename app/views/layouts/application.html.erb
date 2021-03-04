@@ -11,16 +11,9 @@
   </head>
 
   <body>
-       <% if flash[:notice]%>
-      <div class="notification is-primary global-notification">
-        <p class="notice"><% notice %></p>
-      </div>
-    <%end%>
-    <% if flash[:alert]%>
-      <div class="notification is-dangerglobal-notification">
-        <p class="alert"><% alert %></p>
-      </div>
-    <%end%>
+     <%= flash[:notice]%>
+     <%= flash[:alert]%>
+    <%# <%= render 'shared/navbar' %>
     <%= yield %>
   </body>
 </html>

@@ -1,5 +1,15 @@
-<h1>New User</h1>
+<div class="section">
+<div class="container">
 
-<%= render 'form', user: @user %>
+<h1>Sign Up</h1>
 
-<%= link_to 'Back', users_path %>
+<%= form_with model: @user do |form| %>
+    <%= form.label :name, "Name:" %>
+    <br/>
+    <%= form.text_field :name, placeholder: "Enter your Name"%>
+    <br />
+    <br/>
+    <%= form.submit "Submit", class: "button-dark"%>
+<% end %>
+</div>
+</div>

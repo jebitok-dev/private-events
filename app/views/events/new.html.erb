@@ -1,23 +1,37 @@
-<h1>New Event</h1>
+<div class="section">
+<div class="container">
 
-<div class="row">
-    <div class="col-md-6 col-md-offset-3">
-        <%= form_with(model:@event, local:true) do |f|%>
-            
-            <%= f.label :event%>
-            <%= f.text_field :event, class: "form-control" %>
+<h1>Add new Event</h1>
 
-            <%= f.label :date%>
-            <%= f.text_field :date, class: "form-control" %>
+<%= form_with model: @event do |form| %>
+<%= @event.errors.full_messages %>
+ 
+ <br/>
 
-            <%= f.label :location%>
-            <%= f.text_field :location, class: "form-control" %>
+ <%= form.label :event, "Event Name" %>
+ <br />
+ <%= form.text_field :event, placeholder: "Enter the event name" %>
+ <br />
 
-            <%= f.label :invite%>
-            <%= f.text_area :invite, class: "form-control" %>
+ <%= form.label :description, "Description"%>
+ <br>
+ <%= form.text_area :description, placeholder: "Enter short description of the event..." %>
+ <br />
 
+ <%= form.label :location, "Location"%>
+ <br>
+ <%= form.text_field :location, placeholder: "Enter the location of the event..." %>
+ <br />
 
-            <%= f.submit "Create new event",class:"btn btn-primary" %>
-        <% end %>
-    </div>
+ <%= form.label :date, "Date"%>
+ <br>
+ <%= form.text_field :date, placeholder: "Enter the date..." %>
+ <br />
+ <br />
+
+ <%= form.submit "Submit" %>
+<% end %>
+<br/>
+<br/>
+</div>
 </div>
