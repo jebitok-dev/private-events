@@ -1,7 +1,7 @@
 class Event < ApplicationRecord
-  serialize :event, Array
+  # serialize :event, Array
   has_many :invitations, foreign_key: :attended_event_id
-  has_many :attendees, through: :invitations, source: :event_creator
+  has_many :attendees, through: :invitations
   belongs_to :creator, class_name: 'User'
 
   scope :past, ->(date = Date.today.to_s) { where('date < ?', date) }
