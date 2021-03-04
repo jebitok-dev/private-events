@@ -1,5 +1,4 @@
 class EventsController < ApplicationController
-
   # GET /events or /events.json
   def index
     # @events = Event.all.order('created_at DESC')
@@ -17,8 +16,7 @@ class EventsController < ApplicationController
   end
 
   # GET /events/1/edit
-  def edit
-  end
+  def edit; end
 
   def create
     @event = User.find(session[:id]).created_events.build(event_params)
@@ -40,13 +38,13 @@ class EventsController < ApplicationController
     redirect_to @event
   end
 
-   # Use callbacks to share common setup or constraints between actions.
+  # Use callbacks to share common setup or constraints between actions.
   #  def set_event
   #   @event = Event.find(params[:id])
   # end
 
   # Only allow a list of trusted parameters through.
   def event_params
-    params.require(:event).permit( :event, :date, :location, :invite)
+    params.require(:event).permit(:event, :date, :location, :invite)
   end
 end

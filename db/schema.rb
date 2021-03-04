@@ -36,5 +36,6 @@ ActiveRecord::Schema.define(version: 2021_03_04_101426) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  t.text :event
   add_foreign_key "events", "users"
 end
