@@ -1,4 +1,5 @@
 class Event < ApplicationRecord
+    has_many :atendees, through: :invitations
     belongs_to :creator, class_name: 'User'
 
     validates :event_name, presence: true
