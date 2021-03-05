@@ -1,2 +1,9 @@
 <%# <p id="notice"><%= notice </p> %>
 <h1><%= @user.name %></h1>
+
+<h2>Events</h2>
+<%= render @user.events %>
+
+<h2>Add an Event:</h2>
+<%= render 'events/form' %>
+

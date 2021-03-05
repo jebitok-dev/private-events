@@ -1,0 +1,25 @@
+<%= form_with model: [ @user, @user.events.build ] do |form| %>
+  <p>
+    <%= form.label :creator %><br>
+    <%= form.text_field :creator %>
+  </p>
+   <p>
+    <%= form.label :event_name %><br>
+    <%= form.text_field :event_name %>
+  </p>
+  <p>
+    <%= form.label :description %><br>
+    <%= form.text_area :description %>
+  </p>
+  <p>
+    <%= form.label :date %><br>
+    <%= form.text_area :date %>
+  </p>
+  <p>
+    <%= form.label :location %><br>
+    <%= form.text_area :location %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
