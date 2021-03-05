@@ -8,6 +8,7 @@ class EventsController < ApplicationController
 
   # GET /events/1 or /events/1.json
   def show
+    @event = Event.find(params[:id])
   end
 
   # GET /events/new
@@ -15,15 +16,14 @@ class EventsController < ApplicationController
     @event = Event.new
   end
 
-  # GET /events/1/edit
-  def edit
-  end
-
   # POST /events or /events.json
   def create
-    @user = User.find(params[:user_id])
-    @event = @user.events.create(event_params)
-    redirect_to user_path(@user)
+    @event = User.find(session[:id]).created_events.build(event_params)
+    if @event.save
+      redirect_to @event
+    else
+      render :new
+    end
   end
 
   private
