@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :set_event, only: %i[ show edit update destroy ]
+  # before_action only: %i[ create ]
 
   # GET /events or /events.json
   def index
@@ -13,6 +13,7 @@ class EventsController < ApplicationController
 
   # GET /events/new
   def new
+    @user = User.find(params[:user_id])
     @event = Event.new
   end
 
@@ -21,16 +22,18 @@ class EventsController < ApplicationController
     @event = User.find(session[:id]).created_events.build(event_params)
     if @event.save
       redirect_to @event
+      scope.all
     else
       render :new
+      scope.where(:events => true)
     end
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_event
-      @event = Event.find(params[:id])
-    end
+    # def set_event
+    #   @event = Event.find(params[:id])
+    # end
 
     # Only allow a list of trusted parameters through.
     def event_params
