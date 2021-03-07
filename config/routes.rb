@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   root 'events#index'
 
   get '/signin', to: 'users#new'
-  get '/events/new', to: 'events#show'
-  get 'events/:id/with_user/:user_id', to: 'events#show'
+  # get '/events/new', to: 'events#show'
+  # get "/users/:id", to: "users#show"
 
   resources :users do
     resources :events

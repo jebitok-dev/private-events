@@ -19,14 +19,9 @@ class EventsController < ApplicationController
 
   # POST /events or /events.json
   def create
-    @event = User.find(session[:id]).created_events.build(event_params)
-    if @event.save
-      redirect_to @event
-      scope.all
-    else
-      render :new
-      scope.where(:events => true)
-    end
+    @user = User.find(params[:user_id])
+    @event = @user.events.create(event_params)
+    redirect_to user_path(@user)
   end
 
   private
