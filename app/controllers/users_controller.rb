@@ -31,9 +31,6 @@ class UsersController < ApplicationController
   end
 
   private
-
-  def require_login; end
-
   def user_params
     params.require(:user).permit(:name)
   end
