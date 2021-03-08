@@ -1,12 +1,11 @@
-<form action="/users/" accept-charset="UTF-8" method="puts">
-  <input type="hidden" name="authenticity_token" value="...">
+<% if flash[:info] %>
+<% flash[:info].each do |message| %>
+<p><% message %></p>
+<% end %>
+<% end %>
 
-  <div>
-    <label for="user_name">Name</label><br>
-    <input type="text" name="user[name]" id="user_name">
-  </div>
-
-  <div>
-    <input type="submit" name="commit" value="Sign In">
-  </div>
-</form>
+  <%= form_for user do |f| %>
+  <% f.label :name, 'Your Name:' %>
+  <% f.text_field name="name" placeholder: "xxxxyy" %>
+  <% f.submit "Submit", name: 'sign_up' %>
+  <% end %>

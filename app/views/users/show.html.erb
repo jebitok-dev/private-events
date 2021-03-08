@@ -1,9 +1,16 @@
 <%# <p id="notice"><%= notice </p> %>
-<h1><%= @user.name %></h1>
+<div class="container">
+    <div class="events-user">
+        <%= print_created_events %>
+    </div>
 
-<h2>Events</h2>
-<%= render @user.events %>
+    <div class="user-part previous">
+        <h2>Past Events</h2>
+        <%= print_upcoming_events %>
+    </div>
 
-<h2>Add an Event:</h2>
-<%= render 'events/form' %>
-
+    <div class="user-part upcoming">
+        <h2>Upcoming Events</h2>
+        <%= print_upcoming_events 'events/form' %>
+    </div>
+</div>
