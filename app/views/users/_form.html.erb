@@ -1,11 +1,11 @@
 <% if flash[:info] %>
 <% flash[:info].each do |message| %>
-<p><% message %></p>
+<p><%= message %></p>
 <% end %>
 <% end %>
 
   <%= form_for user do |f| %>
-  <% f.label :name, 'Your Name:' %>
-  <%# <% f.text_field name="name" placeholder: "xxxxyy" %>
-  <% f.submit "Submit", name: 'sign_up' %>
+  <%= f.label :name, 'Your Name:' %>
+  <%= f.text_field :name, placeholder: "xxxxyy" %>
+  <%= f.submit "Submit", name: 'sign_up' %>
   <% end %>

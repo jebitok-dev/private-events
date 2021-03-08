@@ -6,7 +6,7 @@
         <h3><%= @event.description %></h3>
         <h3><%= @event.date %></h3>
         <h3><%= @event.location %></h3>
-        <h4>Created by <%= link_to @event.creator.uname, user_path(@event.creator) %></h4><br>
+        <h4>Created by <%= link_to @event.creator.name, user_path(@event.creator) %></h4><br>
         <%= attendees %>
     </div>
 

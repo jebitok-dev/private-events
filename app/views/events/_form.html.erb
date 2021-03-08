@@ -1,21 +1,21 @@
 <%= form_for event do |f| %>
    <div>
-    <%= f.label :event_name %><br>
+    <%= f.label :event_name, 'Event_Name' %><br>
     <%= f.text_field :event_name %>
   </div>
-  <p>
-    <%= f.label :description %><br>
+  <div>
+    <%= f.label :description, 'Description' %><br>
     <%= f.text_area :description %>
-  </p>
-  <p>
-    <%= f.label :date %><br>
+  </div>
+  <div>
+    <%= f.label :date, 'Date' %><br>
     <%= f.text_area :date %>
-  </p>
-  <p>
-    <%= f.label :location %><br>
+  </div>
+  <div>
+    <%= f.label :location, 'Location' %><br>
     <%= f.text_area :location %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
+  </div>
+  <div>
+    <%= f.submit "Submit", :class => "btn-primary" %>
+  </div>
 <% end %>
