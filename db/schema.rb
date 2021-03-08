@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_08_130430) do
+ActiveRecord::Schema.define(version: 2021_03_07_235049) do
 
   create_table "events", force: :cascade do |t|
     t.text "event_name"
@@ -29,8 +29,11 @@ ActiveRecord::Schema.define(version: 2021_03_08_130430) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-# Could not dump table "users" because of following StandardError
-#   Unknown type 'reference' for column 'attendee'
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   add_foreign_key "events", "users"
 end
