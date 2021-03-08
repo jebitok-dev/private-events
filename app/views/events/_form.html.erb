@@ -1,21 +1,21 @@
-<%= form_with model: @user do |form| %>
-   <p>
-    <%= form.label :event_name %><br>
-    <%= form.text_field :event_name %>
+<%= form_for event do |f| %>
+   <div>
+    <%= f.label :event_name %><br>
+    <%= f.text_field :event_name %>
+  </div>
+  <p>
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
   </p>
   <p>
-    <%= form.label :description %><br>
-    <%= form.text_area :description %>
+    <%= f.label :date %><br>
+    <%= f.text_area :date %>
   </p>
   <p>
-    <%= form.label :date %><br>
-    <%= form.text_area :date %>
+    <%= f.label :location %><br>
+    <%= f.text_area :location %>
   </p>
   <p>
-    <%= form.label :location %><br>
-    <%= form.text_area :location %>
-  </p>
-  <p>
-    <%= form.submit %>
+    <%= f.submit %>
   </p>
 <% end %>

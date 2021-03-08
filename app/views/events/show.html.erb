@@ -1,7 +1,16 @@
-<h1><%= @user.name %></h1>
+<div class="wrapper">
+    <div class="wrapper2">
+        <h2>
+            <%= @event.event_name %><br>
+        </h2>
+        <h3><%= @event.description %></h3>
+        <h3><%= @event.date %></h3>
+        <h3><%= @event.location %></h3>
+        <h4>Created by <%= link_to @event.creator.uname, user_path(@event.creator) %></h4><br>
+        <%= attendees %>
+    </div>
 
-<h2>Events</h2>
-<%= render @user.events %>
-
-<h2>Add an Event:</h2>
-<%= render 'events/form' %>
+    <div class="wrapper3">
+        <%= creator %>
+    </div>
+</div>
