@@ -1,4 +1,4 @@
-<%= form_for model: [@user, @user.events.build] do |form| %>
+<%= form_with model: @user do |form| %>
    <p>
     <%= form.label :event_name %><br>
     <%= form.text_field :event_name %>

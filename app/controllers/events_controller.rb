@@ -20,8 +20,8 @@ class EventsController < ApplicationController
   # POST /events or /events.json
   def create
     @user = User.find(params[:user_id])
-    @event = @user.events.create(event_params)
-    redirect_to user_path(@user)
+    @event = @user.created_events.build(event_params)
+    redirect_to user_path(@user).event
   end
 
   private
@@ -32,6 +32,6 @@ class EventsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def event_params
-      params.require(:event).permit(:event_name, :description, :date, :location)
+      params.permit(:event_name, :description, :date, :location)
     end
 end

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get '/signin', to: 'users#new'
   # get '/events/new', to: 'events#show'
   # get "/users/:id", to: "users#show"
+  put 'events/add/:id', to: 'events#add'
 
   resources :users do
     resources :events
