@@ -32,7 +32,8 @@ class EventsController < ApplicationController
   helper_method :add_user_to_event
 
   private
-    def event_params
-      params.require(:event).permit(:event_name, :description, :date, :location)
-    end
+
+  def event_params
+    params.require(:event).permit(:event_name, :description, :date, :location)
+  end
 end
