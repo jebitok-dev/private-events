@@ -24,6 +24,24 @@ class UsersController < ApplicationController
     end
   end
 
+  def sign_in
+    @user = User.find_by(name: params[:name])
+
+    if @user
+      session[:id] = @user.id
+      session[:name] = @user.name
+      redirect_to @user, notice: 'You have successfully signed in'
+    else
+      render :log_in, alert: 'User does not exist'
+    end
+  end
+
+  def log_out
+    session.delete(:id)
+    session.delete(:name)
+    redirect_to root_path, notice: 'You have successfully logged out'
+  end
+
   private
     def require_login
 
