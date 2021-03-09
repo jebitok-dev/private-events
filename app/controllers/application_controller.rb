@@ -5,13 +5,13 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
 
   def current_user
-    @current_user ||= User.find_by(id: session[:user_id])
+    @current_user ||= User.find_by(id: session[:creator_id])
   end
 
   private
 
   def require_login
-    return if session[:user_id]
+    return if session[:creator_id]
 
     flash[:error] = 'You must be logged in to access this section'
     redirect_to sign_in_path # halts request cycle

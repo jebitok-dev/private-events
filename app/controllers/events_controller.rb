@@ -5,11 +5,6 @@ class EventsController < ApplicationController
     @upcoming_events = Event.future
   end
 
-  def show
-    @event = Event.find(params[:id])
-    @users = User.all
-  end
-
   def new
     @event = Event.new
   end
@@ -23,6 +18,12 @@ class EventsController < ApplicationController
       flash[:info] = @events.errors.full_messages
       render :new
     end
+  end
+
+
+  def show
+    @event = Event.find(params[:id])
+    @users = User.all
   end
 
   def add_user_to_event(user)

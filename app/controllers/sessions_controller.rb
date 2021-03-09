@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.find_by(name: params[:session][:name])
+    user = User.find_by(name: params[:name])
     if user
       session[:user_id] = user.id
       redirect_to root_path
@@ -17,7 +17,7 @@ class SessionsController < ApplicationController
   end
 
   def delete
-    session.delete(:user_id)
+    session.delete(:userr_id)
     @current_user = nil
     redirect_to sign_in_path
   end
