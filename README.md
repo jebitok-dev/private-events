@@ -33,7 +33,10 @@ To get this project up and running locally, you must already have ruby and rails
 ### Run
 
 - `$ rails s `
-- http://localhost:3000/users/
+- http://localhost:3000/sign_in/
+- Enter your name on the sign up page then re-enter the name of sign in page then go ahead to create events and see some events that are coming up.
+
+![screenshot](./app/assets/images/privateE.png)
 
 ## Author
 
