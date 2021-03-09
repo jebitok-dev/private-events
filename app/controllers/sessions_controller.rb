@@ -17,7 +17,7 @@ class SessionsController < ApplicationController
   end
 
   def delete
-    session.delete(:userr_id)
+    session.delete(:user_id)
     @current_user = nil
     redirect_to sign_in_path
   end
