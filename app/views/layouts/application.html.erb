@@ -11,6 +11,21 @@
   </head>
 
   <body>
+    <section>
+        <nav>
+            <div class="left-nav">
+
+            </div>
+            <div class="right-nav">
+                <div class='current-user'>
+                    <h3>
+                        <%= show_sign_links %>
+                    </h3>
+                </div>
+                <%= show_navigation_items %>
+            </div>
+        </nav>
+    </section>
     <%= yield %>
   </body>
 </html>

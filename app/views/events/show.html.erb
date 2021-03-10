@@ -1,0 +1,16 @@
+<div class="wrapper">
+    <div class="wrapper2">
+        <h2>
+            <%= @event.event_name %><br>
+        </h2>
+        <h3><%= @event.description %></h3>
+        <h3><%= @event.date %></h3>
+        <h3><%= @event.location %></h3>
+        <h4>Created by <%= link_to @event.creator.name, user_path(@event.creator) %></h4><br>
+        <%= attendees %>
+    </div>
+
+    <div class="wrapper3">
+        <%= creator %>
+    </div>
+</div>

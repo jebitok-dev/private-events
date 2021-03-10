@@ -1,0 +1,9 @@
+<div>
+   <% Event.past.find_each do |event |  %>
+   <h3>
+     <%= link_to event.event_name, event_path(event) %><br>
+     <%= event.date %><br>
+   </h3>
+   <br>
+   <% end %>
+</div>
